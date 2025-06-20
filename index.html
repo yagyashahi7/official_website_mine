@@ -275,7 +275,8 @@
       </div>
 
     </section><!-- /Resume Section -->
-      <!-- ======= Portfolio Section ======= -->
+     
+            <!-- ======= Portfolio Section ======= -->
         <section id="Portfolio" class="portfolio section-bg">
           <div class="container">
 
@@ -283,11 +284,11 @@
               <h2>Portfolio</h2>
             </div>
 
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
 
               <!-- Project 1 -->
               <div class="col">
-                <div class="card h-100 project-card">
+                <div class="card h-100 project-card rounded-card">
                   <div class="card-body">
                     <h5 class="card-title">Secured Blockchain-Based Electronic Voting System</h5>
                     <ul class="card-text">
@@ -302,7 +303,7 @@
 
               <!-- Project 2 -->
               <div class="col">
-                <div class="card h-100 project-card">
+                <div class="card h-100 project-card rounded-card">
                   <div class="card-body">
                     <h5 class="card-title">Voice-Based Parkinson's Disease Detection</h5>
                     <ul class="card-text">
@@ -319,6 +320,35 @@
 
           </div> <!-- End .container -->
         </section><!-- End Portfolio Section -->
+
+        <!-- Custom CSS to style the card -->
+        <style>
+          .rounded-card {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+          }
+
+          .rounded-card:hover {
+            transform: translateY(-5px);
+          }
+
+          .card-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+          }
+
+          .card-text li {
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+          }
+
+          .btn-bottom {
+            margin-top: 1rem;
+          }
+        </style>
+
 
     <!-- Services Section -->
     <section id="services" class="services section">
