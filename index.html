@@ -4,20 +4,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Yagya Bahadur Shahi</title>
   <link rel="icon" type="image/x-icon" href="assets/image/yagya_photo.jpg" />
-  <meta name="description" content="" />
-  <meta
-    name="keywords"
-    content="WordPress Developer Nepal, WordPress development in Nepal, Developer in Nepal, Animal Activist Nepal, Vegan Developer Nepal"
-  />
+
+  <meta name="description" content="Portfolio of Yagya Bahadur Shahi" />
+  <meta name="keywords" content="Python Developer, AI ML Nepal, ECE Graduate, Vipassana Meditator" />
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,500,600,700|Poppins:300,400,500,600,700"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,500,600,700|Poppins:300,400,500,600,700" rel="stylesheet" />
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
@@ -27,11 +21,12 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Main CSS File -->
+  <!-- Custom CSS (load after vendor CSS to override them) -->
   <link href="assets/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
+
   <!-- Mobile nav toggle button -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -39,7 +34,7 @@
   <header id="header">
     <div class="d-flex flex-column">
       <div class="profile text-center">
-        <img src="assets/image/yagya_photo.jpg" alt="Yagya Bahaudr Shahi" class="img-fluid rounded-circle" />
+        <img src="assets/image/yagya_photo.jpg" alt="Yagya Bahadur Shahi" class="img-fluid rounded-circle" />
         <h1 class="text-light"><a href="index.html">Yagya Bahadur Shahi</a></h1>
         <div class="social-links mt-3">
           <a href="https://www.facebook.com/yagya.thakuri.2025" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -61,7 +56,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center" style="background-image: url('./assets/image/buddha_image.jpg');">
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Yagya Bahadur Shahi</h1>
       <p>I'm <span class="typed" data-typed-items="a Python Developer, AI/ML enthusiast, an Electronics Graduate, Vipassana meditator"></span></p>
@@ -69,31 +64,24 @@
   </section>
 
   <main id="main">
+
     <!-- About Section -->
     <section id="about" class="about">
       <div class="container">
         <div class="section-title">
           <h2>About</h2>
-          <p>
-            I am a Python Developer with Electrical and Electronics background. 
-          </p>
-          <p>
-            Beyond technology, I am Vipassana meditator.
-          </p>
+          <p>I am a Python Developer with an Electrical and Electronics background.</p>
+          <p>Beyond technology, I am a Vipassana meditator.</p>
         </div>
 
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/image/yagya_photo.jpg" alt="Yagya Bahadur Shahi" class="img-fluid" width="300" height="300" />
+            <img src="assets/image/yagya_photo.jpg" alt="Yagya Bahadur Shahi" class="img-fluid" />
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>Electrical and Electronics Graduate</h3>
-            <p class="fst-italic">
-              With bachelor degree, I have honed my skills in Python, HTML, CSS, AI/ML.
-            </p>
-            <p>
-              As a lifelong learner, I am passionate about exploring new technologies and applying them to solve real-world problems. My journey in the tech world is driven by curiosity and a desire to make a positive impact.
-            </p>
+            <p class="fst-italic">With a bachelor's degree, I have honed my skills in Python, HTML, CSS, AI/ML.</p>
+            <p>I am passionate about using technology to solve real-world problems and continually learning to grow in the field.</p>
           </div>
         </div>
       </div>
@@ -105,13 +93,33 @@
         <div class="section-title">
           <h2>Skills</h2>
         </div>
-        <div class="skills-logos d-flex flex-wrap justify-content-center gap-3">
+        <div class="skills-logos">
           <div class="logo" data-aos="zoom-in"><img src="assets/image/python_image.jpg" alt="Python" /></div>
           <div class="logo" data-aos="zoom-in" data-aos-delay="100"><img src="assets/image/aiml_image.png" alt="AI/ML" /></div>
         </div>
       </div>
     </section>
-  </main>
-</body>
 
+  </main>
+
+  <!-- JS Vendor Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+
+  <!-- Main JS -->
+  <script>
+    AOS.init();
+    const typed = new Typed('.typed', {
+      strings: document.querySelector('.typed').getAttribute('data-typed-items').split(','),
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 2000,
+      loop: true
+    });
+  </script>
+</body>
 </html>
