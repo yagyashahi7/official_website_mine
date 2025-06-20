@@ -7,7 +7,6 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: "Segoe UI", sans-serif;
       background: linear-gradient(to right, #3f87a6, #ebf8e1, #f69d3c);
       color: #333;
@@ -19,21 +18,32 @@
       text-align: center;
     }
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: 40px auto;
       background: white;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     h1 {
       margin-top: 0;
       color: #003049;
     }
+    .photo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .photo img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #003049;
+    }
     a.button {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
       background-color: #f77f00;
       color: white;
       text-decoration: none;
@@ -45,33 +55,54 @@
     }
     footer {
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       font-size: 14px;
-      color: #888;
+      color: #666;
+    }
+    section {
+      margin-top: 40px;
+    }
+    .contact-info p {
+      margin: 5px 0;
     }
   </style>
 </head>
 <body>
   <header>
     <h2>Yagya Bahadur Shahi</h2>
-    <p>Official Personal Portfolio & Project Hub</p>
+    <p>Official Portfolio · Electronics & AI Projects</p>
   </header>
 
   <main>
-    <h1>Welcome to My Official Website</h1>
-    <p>Hello! I'm Yagya Bahadur Shahi, an aspiring engineer passionate about technology, AI, blockchain, and innovation. This is my personal project space where I share what I'm building, learning, and contributing to.</p>
+    <div class="photo">
+      <img src="my_document/yagya_photo.jpg" alt="Yagya Bahadur Shahi" />
+    </div>
 
-    <h2>Featured Projects</h2>
-    <ul>
-      <li><strong><a href="https://github.com/yagyashahi7/Secured_Blockchain_Based-Electronic_Voting_System" target="_blank">Blockchain-Based EVM</a></strong> – A secure and transparent electronic voting system using Ethereum blockchain.</li>
-      <li><strong><a href="https://github.com/yagyashahi7/voice-based-parkinson-detection" target="_blank">Voice-Based Parkinson’s Detection</a></strong> – Machine learning model for early detection of Parkinson’s disease.</li>
-    </ul>
+    <h1>Welcome!</h1>
+    <p>Hi! I'm Yagya Bahadur Shahi — an ECE undergrad with interests in artificial intelligence, blockchain systems, biomedical engineering, and embedded projects. This is my official portfolio to showcase the projects I’ve built and published online.</p>
 
-    <a class="button" href="https://github.com/yagyashahi7" target="_blank">Visit My GitHub</a>
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><strong><a href="https://github.com/yagyashahi7/Secured_Blockchain_Based-Electronic_Voting_System" target="_blank">Blockchain-Based EVM</a></strong> – Secured voting via Ethereum blockchain with biometric authentication.</li>
+        <li><strong><a href="https://github.com/yagyashahi7/voice-based-parkinson-detection" target="_blank">Voice-Based Parkinson Detection</a></strong> – Machine learning model for early diagnosis using voice biomarkers.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Connect With Me</h2>
+      <div class="contact-info">
+        <p>Email: yagyashahiofficial07@example.com</p>
+        <p>Phone: +977-9841208631</p>
+        <p>Location: Kathmandu, Nepal</p>
+      </div>
+      <a class="button" href="https://www.linkedin.com/in/yagyashahi7" target="_blank">LinkedIn</a>
+      <a class="button" href="https://github.com/yagyashahi7" target="_blank">GitHub</a>
+    </section>
   </main>
 
   <footer>
-    © 2025 Yagya Bahadur Shahi · All rights reserved
+    &copy; 2025 Yagya Bahadur Shahi · All rights reserved
   </footer>
 </body>
 </html>
