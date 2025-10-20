@@ -1,41 +1,45 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+// ===============================
+// Contact Form - SMTP (Gmail)
+// ===============================
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'yagyashahiofficial07@gmail.com';
+// 1. Import PHPMailer (you can get it from https://github.com/PHPMailer/PHPMailer)
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+require '../assets/vendor/PHPMailer/src/Exception.php';
+require '../assets/vendor/PHPMailer/src/PHPMailer.php';
+require '../assets/vendor/PHPMailer/src/SMTP.php';
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+// 2. Gmail account you want to receive messages at
+$receiving_email_address = 'yagyashahiofficial07@gmail.com';
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+// 3. Create PHPMailer instance
+$mail = new PHPMailer(true);
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+try {
+    // Server settings
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com'; // Gmail SMTP server
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'yagyashahiofficial07@gmail.com'; // your Gmail address
+    $mail->Password   = 'pgkt btin bbnr pykd'; // your Gmail App Password (see note below)
+    $mail->SMTPSecure = 'tls';
+    $mail->Port       = 587;
 
-  echo $contact->send();
+    // Recipients
+    $mail->setFrom($_POST['email'], $_POST['name']);
+    $mail->addAddress($receiving_email_address, 'Yagya Official');
+
+    // Content
+    $mail->isHTML(true);
+    $mail->Subject = $_POST['subject'];
+    $mail->Body    = nl2br("From: {$_POST['name']} ({$_POST['email']})\n\nMessage:\n{$_POST['message']}");
+    $mail->AltBody = "From: {$_POST['name']} ({$_POST['email']})\n\nMessage:\n{$_POST['message']}";
+
+    $mail->send();
+    echo 'OK';
+} catch (Exception $e) {
+    echo "Error: {$mail->ErrorInfo}";
+}
 ?>
