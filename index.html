@@ -562,24 +562,29 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
 
-  <!-- Main JS File (deferred) -->
+    <!-- Main JS File (deferred) -->
   <script src="assets/js/main.js" defer></script>
 
   <!-- Initialization and small helpers -->
   <script>
-    // Wait for DOM content to be available
     document.addEventListener('DOMContentLoaded', function () {
-      // Initialize AOS (Animate on Scroll)
+
+      /* ------------------------------
+         AOS (Animate on Scroll)
+      ------------------------------ */
       if (window.AOS) {
         AOS.init({
-          duration: 700,
+          duration: 800,
           easing: 'ease-in-out',
           once: true,
           mirror: false
         });
       }
 
-      // Initialize Typed.js if present
+      /* ------------------------------
+         Typed.js Initialization
+         (Smooth typing and natural cursor)
+      ------------------------------ */
       try {
         if (window.Typed) {
           const typedEl = document.querySelector('.typed');
@@ -589,28 +594,32 @@
             new Typed(typedEl, {
               strings: items,
               loop: true,
-              typeSpeed: 60,
-              backSpeed: 30,
-              backDelay: 2000
+              typeSpeed: 70,          // Smooth typing speed
+              backSpeed: 40,          // Natural erase speed
+              backDelay: 1500,        // Delay before erasing
+              smartBackspace: true,   // Only erase what's changed
+              showCursor: true,
+              cursorChar: '|',        // Cursor style
+              fadeOut: false
             });
           }
         }
       } catch (e) {
-        // ignore typed errors silently
-        console.warn('Typed init error', e);
+        console.warn('Typed init error:', e);
       }
 
-      // Smooth scroll for anchor links (header nav)
+      /* ------------------------------
+         Smooth Scroll for Anchor Links
+      ------------------------------ */
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-          // allow normal behavior for external links
           const href = this.getAttribute('href');
           if (href.length > 1) {
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
               target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              // close mobile nav if open (if your main.js toggles it)
+              // Close mobile nav if active
               const headerToggle = document.querySelector('.header-toggle');
               if (headerToggle && headerToggle.classList.contains('active')) {
                 headerToggle.click?.();
@@ -620,14 +629,20 @@
         });
       });
 
-      // Scroll top button visibility
+      /* ------------------------------
+         Scroll Top Button Visibility
+      ------------------------------ */
       const scrollTopBtn = document.getElementById('scroll-top');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) scrollTopBtn.classList.add('active');
-        else scrollTopBtn.classList.remove('active');
-      });
+      if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 400) scrollTopBtn.classList.add('active');
+          else scrollTopBtn.classList.remove('active');
+        });
+      }
 
-      // Formspree form handler (keeps your existing behavior)
+      /* ------------------------------
+         Formspree Form Handler
+      ------------------------------ */
       const form = document.querySelector('.php-email-form');
       if (form) {
         form.addEventListener('submit', function (e) {
@@ -654,9 +669,10 @@
                   sentMsg.style.display = 'none';
                 }, 4000);
               } else {
-                // Try to parse JSON for error details
                 response.json().then(data => {
-                  const message = (data && data.error) ? data.error : 'There was an issue sending your message.';
+                  const message = (data && data.error)
+                    ? data.error
+                    : 'There was an issue sending your message.';
                   errorMsg.textContent = message;
                   errorMsg.style.display = 'block';
                 }).catch(() => {
@@ -674,6 +690,17 @@
       }
     });
   </script>
-</body>
 
+  <!-- Optional: smoother cursor blink -->
+  <style>
+    .typed-cursor {
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+  </style>
+</body>
 </html>
