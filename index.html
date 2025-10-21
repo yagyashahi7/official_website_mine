@@ -2,99 +2,147 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Yagya Shahi</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Yagya Bahadur Shahi — AI/ML and Python developer from Nepal. Electronics & Communication background, with a monastic practice shaping discipline and focus." />
+  <meta name="keywords" content="Yagya Shahi, AI, Machine Learning, Python, Electronics, Monastic Life, Vipassana, Portfolio, Nepal" />
+  <meta name="author" content="Yagya Bahadur Shahi" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Yagya Shahi — AI/ML & Python Developer" />
+  <meta property="og:description" content="Blending technology, research, and a mindful monastic life — portfolio of Yagya Bahadur Shahi." />
+  <meta property="og:image" content="https://www.shahiyagya.com.np/assets/img/my-profile-img.jpg" />
+  <meta property="og:url" content="https://www.shahiyagya.com.np" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <!-- Fonts (preconnect/preload) -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet" />
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Small page-level styles (kept small & non-intrusive) -->
+  <style>
+    /* subtle focus ring for keyboard navigation */
+    a:focus,
+    button:focus,
+    input:focus,
+    textarea:focus {
+      outline: 3px solid rgba(52, 180, 88, 0.18);
+      outline-offset: 2px;
+    }
+
+    /* card tweaks kept from your previous design */
+    .rounded-card {
+      border-radius: 1.25rem;
+      background-color: #34b458;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(199, 115, 115, 0.06);
+      transition: transform .18s ease, box-shadow .18s ease;
+      color: #fff;
+    }
+
+    .rounded-card .card-body {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      color: #fff;
+    }
+
+    .rounded-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .08);
+    }
+
+    .btn-bottom {
+      margin-top: 1rem;
+    }
+
+    /* monastic/buddhism section gentle background */
+    #monastic-life,
+    #buddhism {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    }
+
+    /* small responsive fix: reduce large top paddings on small screens */
+    @media (max-width: 575px) {
+      .hero.section { padding-top: 3rem; padding-bottom: 3rem; }
+    }
+  </style>
 </head>
 
 <body class="index-page">
 
   <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <i class="header-toggle d-xl-none bi bi-list" aria-hidden="true"></i>
 
     <div class="profile-img">
-      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+      <!-- Added alt text for accessibility -->
+      <img src="assets/img/my-profile-img.jpg" alt="Yagya Bahadur Shahi" class="img-fluid rounded-circle" loading="lazy" />
     </div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center" aria-label="Home">
       <h1 class="sitename">Yagya Shahi</h1>
     </a>
 
-    <div class="social-links text-center">
-      <a href="https://x.com/shahiyagya25" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.facebook.com/yagya.thakuri.2025" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="https://www.instagram.com/thakuri.yagya_7/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://github.com/yagyashahi7" class="github"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/yagyashahi/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    <div class="social-links text-center" aria-hidden="false">
+      <a href="https://x.com/shahiyagya25" class="twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.facebook.com/yagya.thakuri.2025" class="facebook" aria-label="Facebook"><i
+          class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/thakuri.yagya_7/" class="instagram" aria-label="Instagram"><i
+          class="bi bi-instagram"></i></a>
+      <a href="https://github.com/yagyashahi7" class="github" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/yagyashahi/" class="linkedin" aria-label="LinkedIn"><i
+          class="bi bi-linkedin"></i></a>
     </div>
 
-    <nav id="navmenu" class="navmenu">
+    <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="#monastic-life"><i class="bi bi-yin-yang navicon"></i>Path of Discipline</a></li>
-        <li><a href="#buddhism"><i class="bi bi-book navicon"></i> The Path of Awakening</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon" aria-hidden="true"></i>Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon" aria-hidden="true"></i> About</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon" aria-hidden="true"></i> Resume</a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon" aria-hidden="true"></i> Portfolio</a></li>
+        <li><a href="#monastic-life"><i class="bi bi-yin-yang navicon" aria-hidden="true"></i>Path of Discipline</a></li>
+        <li><a href="#buddhism"><i class="bi bi-book navicon" aria-hidden="true"></i> The Path of Awakening</a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon" aria-hidden="true"></i> Contact</a></li>
       </ul>
     </nav>
-
   </header>
 
   <main class="main">
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
+      <img src="assets/img/hero-bg.jpg" alt="Monastery background" data-aos="fade-in" class="" loading="lazy" />
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Yagya Shahi</h2>
         <p>I'm <span class="typed" data-typed-items="Python Developer, AI/ML Explorer, Electronics Engineer">Python
-            Developer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span
-            class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            Developer</span><span class="typed-cursor typed-cursor--blink"
+            aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink"
+            aria-hidden="true"></span></p>
       </div>
-
-    </section><!-- /Hero Section -->
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about section">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
         <p>AI/ML and Python developer with a background in Electronics and Communication Engineering. Passionate about
@@ -102,13 +150,12 @@
           foundation in physics and mathematics, with a research-oriented mindset and hands-on experience in embedded
           systems, machine learning, and signal processing. Committed to using technology for social impact and academic
           advancement.</p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt="">
+            <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt="Profile photo" loading="lazy" />
           </div>
           <div class="col-lg-8 content">
             <h2>Electronics Student &amp; AI/ML Enthusiast.</h2>
@@ -132,88 +179,72 @@
             </p>
           </div>
         </div>
-
       </div>
-
-    </section><!-- /About Section -->
+    </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills section light-background">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row skills-content skills-animation">
-
           <div class="col-lg-6">
-
             <div class="progress">
               <span class="skill"><span>Python</span> <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
+            </div>
 
             <div class="progress">
               <span class="skill"><span>AI/ML</span> <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
+            </div>
 
             <div class="progress">
               <span class="skill"><span>HTML</span> <i class="val">75%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-
+            </div>
           </div>
 
           <div class="col-lg-6">
-
             <div class="progress">
               <span class="skill"><span>C</span> <i class="val">50%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                </div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
+            </div>
 
             <div class="progress">
               <span class="skill"><span>C++</span> <i class="val">50%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                </div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                  aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
+            </div>
           </div>
-
         </div>
-
       </div>
-
-    </section><!-- /Skills Section -->
+    </section>
 
     <!-- Resume Section -->
     <section id="resume" class="resume section">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Resume</h2>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container">
-
         <div class="row">
-
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 class="resume-title">Education</h3>
             <div class="resume-item">
@@ -222,7 +253,7 @@
               <p><em>Department of Electrical &amp; Electronics Engineering, Kathmandu University, KU</em></p>
               <p>With coursework and projects focused on Embedded Systems, Communication, AI/ML, and Digital
                 Electronics.</p>
-            </div><!-- Edn Resume Item -->
+            </div>
             <div class="resume-item">
               <h4>Introduction to Generative AI – Google Cloud Learning Path</h4>
               <h5>24 June 2025</h5>
@@ -231,14 +262,13 @@
                 AI, and applying AI Principles using Google Cloud.</p>
               <p><a href="https://www.credly.com/users/yagya-bahadur-shahi.56631188" target="_blank"
                   rel="noopener noreferrer">View Credential on Credly</a></p>
-            </div><!-- End Resume Item -->
+            </div>
             <div class="resume-item">
               <h4>Higher Secondary Education (+2 Science)</h4>
               <h5>2019 - 2021</h5>
               <p><em>Bagiswori College, Affiliated to National Examinations Board (NEB), Nepal</em></p>
               <p>Focused on Physics, Chemistry, Mathematics, and Biology/Computer Science.</p>
-            </div><!-- Edn Resume Item -->
-
+            </div>
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
@@ -264,7 +294,7 @@
                 <p><a href="https://www.keensightanalytics.com/" target="_blank" rel="noopener noreferrer">View
                     KeenSight Analytics</a></p>
               </ul>
-            </div><!-- Edn Resume Item -->
+            </div>
 
             <div class="resume-item">
               <h4>Data Analyst / Financial Record Manager</h4>
@@ -282,20 +312,15 @@
                 <li>Developed automated workflows for monthly financial summaries and reporting.</li>
                 <p><a href="https://munivihara.com/" target="_blank" rel="noopener noreferrer">View Munivihar</a></p>
               </ul>
-            </div><!-- Edn Resume Item -->
-
+            </div>
           </div>
-
         </div>
-
       </div>
+    </section>
 
-    </section><!-- /Resume Section -->
-
-    <!-- ======= Portfolio Section ======= -->
+    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section-bg">
       <div class="container">
-
         <div class="section-title" data-aos="fade-up">
           <h2>Portfolio</h2>
           <p>Some of my academic and personal projects that combine electronics, AI/ML, and real-world problem-solving.
@@ -303,11 +328,10 @@
         </div>
 
         <div class="row row-cols-1 row-cols-md-2 g-4">
-
-          <!-- Project 1 -->
           <div class="col" data-aos="fade-up" data-aos-delay="100">
             <div class="card h-100 project-card rounded-card">
-              <img src="assets/img/portfolio/blockchain-voting.png" class="card-img-top" alt="Blockchain Voting System">
+              <img src="assets/img/portfolio/blockchain-voting.png" class="card-img-top" alt="Blockchain Voting System"
+                loading="lazy" />
               <div class="card-body">
                 <h5 class="card-title">Secured Blockchain-Based Electronic Voting System</h5>
                 <ul class="card-text">
@@ -322,11 +346,10 @@
             </div>
           </div>
 
-          <!-- Project 2 -->
           <div class="col" data-aos="fade-up" data-aos-delay="200">
             <div class="card h-100 project-card rounded-card">
               <img src="assets/img/portfolio/parkinson-detection.png" class="card-img-top"
-                alt="Parkinson's Disease Detection">
+                alt="Parkinson's Disease Detection" loading="lazy" />
               <div class="card-body">
                 <h5 class="card-title">Voice-Based Parkinson's Disease Detection</h5>
                 <ul class="card-text">
@@ -342,11 +365,9 @@
             </div>
           </div>
 
-          <!-- Project 3 -->
           <div class="col" data-aos="fade-up" data-aos-delay="300">
             <div class="card h-100 project-card rounded-card">
-              <img src="assets/img/portfolio/hr-faq-bot.png" class="card-img-top"
-                alt="AI/ML Full Stack Development Intern">
+              <img src="assets/img/portfolio/hr-faq-bot.png" class="card-img-top" alt="HR FAQ Bot" loading="lazy" />
               <div class="card-body">
                 <h5 class="card-title">AI/ML Full Stack Development Intern</h5>
                 <ul class="card-text">
@@ -360,45 +381,12 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-        </div> <!-- End .row -->
-      </div> <!-- End .container -->
-    </section><!-- End Portfolio Section -->
-
-
-    <!-- Custom CSS to style the card -->
-    <style>
-      .rounded-card {
-        border-radius: 1.5rem;
-        background-color: #34b458;
-        /* Light green */
-        overflow: hidden;
-        box-shadow: 0 8px 16px rgba(199, 115, 115, 0.08);
-        transition: transform 0.2s ease;
-      }
-
-      .rounded-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .card-title {
-        font-weight: 600;
-        margin-bottom: 1rem;
-      }
-
-      .card-text li {
-        margin-bottom: 0.5rem;
-        line-height: 1.4;
-      }
-
-      .btn-bottom {
-        margin-top: 1rem;
-      }
-    </style>
-
-    <!-- Monastic Life | Path of Mindfulness Section -->
+    <!-- Monastic Life -->
     <section id="monastic-life" class="about section">
-
       <div class="container" data-aos="fade-up">
         <h2>Monastic Life | Path of Mindfulness</h2>
         <p>
@@ -416,28 +404,22 @@
             language</strong>, moral education, and <strong>Pariyatti Shikshya</strong>, the traditional Buddhist
           academic curriculum. I successfully passed examinations up to <strong>Level 7-8</strong>, deepening my
           understanding of Buddhist philosophy and discipline.
-          <br>
         </p>
         <p style="text-indent: 40px;">
           Over the years, I participated in numerous <strong>Vipassana meditation courses</strong> including children's
           meditation courses (3-day, 5 times), 5- and 7-day retreats (around 5-6 times), and multiple 10-day courses at
           Dhamma Shringa Vipassana Center and other centers across Nepal.
-          <br>
         </p>
         <p style="text-indent: 40px;">
           The monastic environment instilled in me a profound sense of self-discipline, mindfulness, and inner balance.
           These qualities now guide my journey in technology and research, allowing me to stay grounded, focused, and
           compassionate while pursuing innovation.
         </p>
-        </p>
       </div>
-
     </section>
-    <!-- End Monastic Life Section -->
 
-    <!-- Buddhism as Education Section -->
+    <!-- Buddhism as Education -->
     <section id="buddhism" class="about section">
-
       <div class="container" data-aos="fade-up">
         <h2 data-aos="fade-up" data-aos-delay="50">🕊️ Buddhism as Education: The Path to Awakening</h2>
 
@@ -478,75 +460,67 @@
           and luminous. 🌼
         </p>
       </div>
-
     </section>
-    <!-- End Buddhism Section -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-
           <div class="col-lg-5">
             <div class="info-wrap">
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <i class="bi bi-geo-alt flex-shrink-0" aria-hidden="true"></i>
                 <div>
                   <h3>Location:</h3>
                   <p>Tatopani-8, Jumla, Nepal</p>
                 </div>
-              </div><!-- End Info Item -->
+              </div>
 
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
+                <i class="bi bi-telephone flex-shrink-0" aria-hidden="true"></i>
                 <div>
                   <h3>Call:</h3>
                   <p>+977 9841208652</p>
                 </div>
-              </div><!-- End Info Item -->
+              </div>
 
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
+                <i class="bi bi-envelope flex-shrink-0" aria-hidden="true"></i>
                 <div>
                   <h3>Email:</h3>
                   <p>yagyashahiofficial07@gmail.com</p>
                 </div>
-              </div><!-- End Info Item -->
+              </div>
             </div>
           </div>
 
-          <!-- Contact Form -->
           <div class="col-lg-7">
             <form action="https://formspree.io/f/mvgwyerg" method="POST" class="php-email-form" data-aos="fade-up"
-              data-aos-delay="200">
+              data-aos-delay="200" aria-label="Contact form">
 
               <!-- Optional hidden fields -->
-              <input type="hidden" name="_subject" value="New message from your website!">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_subject" value="New message from your website!" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
 
               <div class="row gy-4">
-
                 <div class="col-md-6">
                   <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required>
+                  <input type="text" name="name" id="name-field" class="form-control" required />
                 </div>
 
                 <div class="col-md-6">
                   <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" name="email" id="email-field" class="form-control" required>
+                  <input type="email" name="email" id="email-field" class="form-control" required />
                 </div>
 
                 <div class="col-md-12">
                   <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" name="subject" id="subject-field" class="form-control" required>
+                  <input type="text" name="subject" id="subject-field" class="form-control" required />
                 </div>
 
                 <div class="col-md-12">
@@ -557,79 +531,146 @@
                 <div class="col-md-12 text-center">
                   <div class="loading" style="display:none;">Loading</div>
                   <div class="error-message" style="display:none;color:red;"></div>
-                  <div class="sent-message" style="display:none;color:green;">Your message has been sent. Thank you!
-                  </div>
-                  <button type="submit">Send Message</button>
+                  <div class="sent-message" style="display:none;color:green;">Your message has been sent. Thank
+                    you!</div>
+                  <button type="submit" class="btn btn-primary">Send Message</button>
                 </div>
-
               </div>
             </form>
-          </div><!-- End Contact Form -->
-
+          </div>
         </div>
       </div>
-    </section><!-- /Contact Section -->
-
+    </section>
   </main>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Scroll to top"><i
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader"></div>
+  <div id="preloader" aria-hidden="true"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- Vendor JS Files (deferred for better performance) -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- Main JS File (deferred) -->
+  <script src="assets/js/main.js" defer></script>
 
-  <!-- Formspree Integration -->
+  <!-- Initialization and small helpers -->
   <script>
-    document.querySelector('.php-email-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const form = this;
-      const loading = form.querySelector('.loading');
-      const errorMsg = form.querySelector('.error-message');
-      const sentMsg = form.querySelector('.sent-message');
-
-      loading.style.display = 'block';
-      errorMsg.style.display = 'none';
-      sentMsg.style.display = 'none';
-
-      fetch(form.action, {
-        method: form.method,
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      })
-        .then(response => {
-          loading.style.display = 'none';
-          if (response.ok) {
-            sentMsg.style.display = 'block';
-            form.reset();
-            setTimeout(() => {
-              sentMsg.style.display = 'none';
-            }, 4000); // hides after 4 seconds
-          }
-          else {
-            errorMsg.textContent = 'There was an issue sending your message.';
-            errorMsg.style.display = 'block';
-          }
-        })
-        .catch(() => {
-          loading.style.display = 'none';
-          errorMsg.textContent = 'There was a network error. Please try again.';
-          errorMsg.style.display = 'block';
+    // Wait for DOM content to be available
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize AOS (Animate on Scroll)
+      if (window.AOS) {
+        AOS.init({
+          duration: 700,
+          easing: 'ease-in-out',
+          once: true,
+          mirror: false
         });
+      }
+
+      // Initialize Typed.js if present
+      try {
+        if (window.Typed) {
+          const typedEl = document.querySelector('.typed');
+          if (typedEl) {
+            const typedItems = typedEl.getAttribute('data-typed-items');
+            const items = typedItems ? typedItems.split(',').map(s => s.trim()) : [];
+            new Typed(typedEl, {
+              strings: items,
+              loop: true,
+              typeSpeed: 60,
+              backSpeed: 30,
+              backDelay: 2000
+            });
+          }
+        }
+      } catch (e) {
+        // ignore typed errors silently
+        console.warn('Typed init error', e);
+      }
+
+      // Smooth scroll for anchor links (header nav)
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          // allow normal behavior for external links
+          const href = this.getAttribute('href');
+          if (href.length > 1) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              // close mobile nav if open (if your main.js toggles it)
+              const headerToggle = document.querySelector('.header-toggle');
+              if (headerToggle && headerToggle.classList.contains('active')) {
+                headerToggle.click?.();
+              }
+            }
+          }
+        });
+      });
+
+      // Scroll top button visibility
+      const scrollTopBtn = document.getElementById('scroll-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) scrollTopBtn.classList.add('active');
+        else scrollTopBtn.classList.remove('active');
+      });
+
+      // Formspree form handler (keeps your existing behavior)
+      const form = document.querySelector('.php-email-form');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const loading = form.querySelector('.loading');
+          const errorMsg = form.querySelector('.error-message');
+          const sentMsg = form.querySelector('.sent-message');
+
+          loading.style.display = 'block';
+          errorMsg.style.display = 'none';
+          sentMsg.style.display = 'none';
+
+          fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          })
+            .then(response => {
+              loading.style.display = 'none';
+              if (response.ok) {
+                sentMsg.style.display = 'block';
+                form.reset();
+                setTimeout(() => {
+                  sentMsg.style.display = 'none';
+                }, 4000);
+              } else {
+                // Try to parse JSON for error details
+                response.json().then(data => {
+                  const message = (data && data.error) ? data.error : 'There was an issue sending your message.';
+                  errorMsg.textContent = message;
+                  errorMsg.style.display = 'block';
+                }).catch(() => {
+                  errorMsg.textContent = 'There was an issue sending your message.';
+                  errorMsg.style.display = 'block';
+                });
+              }
+            })
+            .catch(() => {
+              loading.style.display = 'none';
+              errorMsg.textContent = 'There was a network error. Please try again.';
+              errorMsg.style.display = 'block';
+            });
+        });
+      }
     });
   </script>
 </body>
