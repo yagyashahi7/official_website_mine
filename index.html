@@ -562,7 +562,7 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
 
-    <!-- Main JS File (deferred) -->
+   <!-- Main JS File (deferred) -->
   <script src="assets/js/main.js" defer></script>
 
   <!-- Initialization and small helpers -->
@@ -582,30 +582,26 @@
       }
 
       /* ------------------------------
-         Typed.js Initialization
-         (Smooth typing and natural cursor)
+         Typed.js Initialization Fix
+         Prevent double initialization
       ------------------------------ */
-      try {
-        if (window.Typed) {
-          const typedEl = document.querySelector('.typed');
-          if (typedEl) {
-            const typedItems = typedEl.getAttribute('data-typed-items');
-            const items = typedItems ? typedItems.split(',').map(s => s.trim()) : [];
-            new Typed(typedEl, {
-              strings: items,
-              loop: true,
-              typeSpeed: 70,          // Smooth typing speed
-              backSpeed: 40,          // Natural erase speed
-              backDelay: 1500,        // Delay before erasing
-              smartBackspace: true,   // Only erase what's changed
-              showCursor: true,
-              cursorChar: '|',        // Cursor style
-              fadeOut: false
-            });
-          }
+      const typedAlreadyExists = document.querySelector('.typed-cursor');
+      if (!typedAlreadyExists && window.Typed) {
+        const typedEl = document.querySelector('.typed');
+        if (typedEl) {
+          const typedItems = typedEl.getAttribute('data-typed-items');
+          const items = typedItems ? typedItems.split(',').map(s => s.trim()) : [];
+          new Typed(typedEl, {
+            strings: items,
+            loop: true,
+            typeSpeed: 70,
+            backSpeed: 40,
+            backDelay: 1500,
+            smartBackspace: true,
+            showCursor: true,
+            cursorChar: '|',
+          });
         }
-      } catch (e) {
-        console.warn('Typed init error:', e);
       }
 
       /* ------------------------------
@@ -619,7 +615,6 @@
             const target = document.querySelector(href);
             if (target) {
               target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              // Close mobile nav if active
               const headerToggle = document.querySelector('.header-toggle');
               if (headerToggle && headerToggle.classList.contains('active')) {
                 headerToggle.click?.();
@@ -630,7 +625,7 @@
       });
 
       /* ------------------------------
-         Scroll Top Button Visibility
+         Scroll Top Button
       ------------------------------ */
       const scrollTopBtn = document.getElementById('scroll-top');
       if (scrollTopBtn) {
@@ -694,12 +689,13 @@
   <!-- Optional: smoother cursor blink -->
   <style>
     .typed-cursor {
-      animation: blink 0.8s infinite;
+      animation: blink 1s step-start infinite;
     }
 
     @keyframes blink {
-      0%, 50%, 100% { opacity: 1; }
-      25%, 75% { opacity: 0; }
+      50% {
+        opacity: 0;
+      }
     }
   </style>
 </body>
